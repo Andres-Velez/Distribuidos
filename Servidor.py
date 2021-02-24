@@ -2,6 +2,13 @@ from SimpleXMLRPCServer import SimpleXMLRPCServer
 #from xmlrpc.server import SimpleXMLRPCServer
 
 class functions:
+
+    def Verification(self, user, password):
+        if(user == "falcao" and password == "galatsatay2020"):
+            return 1
+        else:
+            return 0
+            
     def invertList(self, archive):
         file_object  = open("archivo.txt", "r")
         l1=file_object.readlines()
