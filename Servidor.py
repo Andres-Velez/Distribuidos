@@ -8,35 +8,47 @@ class functions:
             return 1
         else:
             return 0
+
+    def invttruelist(self, lista,lista2):
+        f = open("resultado1.txt","w+")
+        if not lista == []:
+            f.write( lista[-1] + "\r\n")
+            lista2.append(lista[-1])
+            lista.pop(-1)
+            self.invttruelist( lista, lista2)
+        f.close()
+        return lista2
             
     def invertList(self, archive):
         file_object  = open("archivo.txt", "r")
         l1=file_object.readlines()
-        l2 = l1.reverse()
-        f = open("resultado1.txt","w+")
-        for i in l2:            
-            f.write( str(i) + "\r\n")    
-        f.close()
+        l2 = []
+        print(self.invttruelist(l1,l2))
         return 1
 
-        return p+q
-    def repeatNum(self, archive):
-        file_object  = open(archive, "r")
-        l1=file_object.readlines()
-        numrepeat = 0
-        actual = 0
-        for i in l1:
-            actual = numinList(i,l1)
-            if actual > numrepeat:
-                numrepeat = actual
-        return numrepeat
-    
     def numinList(self,num, List):
         result = 0
         for i in List:
             if i == num:
                 result += 1
         return result
+
+    def repeatNum(self, archive):
+        
+        file_object  = open(archive, "r")
+        l1=file_object.readlines()
+        self.numinList(1,l1)
+        """
+        numrepeat = 0
+        actual = 0
+        for i in l1:
+            actual = self.numinList(i,l1)
+            if actual > numrepeat:
+                numrepeat = actual
+        return numrepeat
+        """
+    
+    
 
 
 server = SimpleXMLRPCServer(("localhost", 8001))

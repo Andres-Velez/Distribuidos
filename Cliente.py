@@ -15,7 +15,6 @@ if s.Verification(user, password) == 1:
 
     if typeoperation == 1:
         s.invertList("archivo.txt")
-        print('terminado')
     if typeoperation == 2:
         print("El numero que mas se repite es" + str(s.repeatNum("archivo.txt")))
 else :
